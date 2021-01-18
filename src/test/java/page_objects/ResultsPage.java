@@ -4,17 +4,26 @@ import com.maven.training.utils.RandomHelper;
 import driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ResultsPage extends DriverManager {
 
+    @FindBy(css = "a[data-test='component-product-card-title']")
+    private List<WebElement> productNames;
+
+    @FindBy(css = "#content-container label")
+    private  List<WebElement> ratingFilters;
+
+    @FindBy(css="div[data-test='component-ratings']")
+    private List<WebElement>  ratingLabels;
 
 
     public  String selectAnyProduct()
     {
-        List<WebElement> products= driver.findElements(By.cssSelector("a[data-test='component-product-card-title']"));
+        //List<WebElement> products= driver.findElements(By.cssSelector("a[data-test='component-product-card-title']"));
         int numberOfProducts=products.size();
         int indexNumber= new RandomHelper().randomNumber(numberOfProducts);
         WebElement selectedElement=products.get(indexNumber);
@@ -33,8 +42,8 @@ public class ResultsPage extends DriverManager {
         //get the intrest rating
         //break
 
-        List<WebElement> ratingElements= driver.findElements(By.cssSelector("#content-container label"));
-        for(WebElement ratingElement:ratingElements)
+        //List<WebElement> ratingElements= driver.findElements(By.cssSelector("#content-container label"));
+        for(WebElement ratingElement:ratingFilters)
         {
             String ratingLabel=ratingElement.getText();
             if(ratingLabel.equalsIgnoreCase(choice))

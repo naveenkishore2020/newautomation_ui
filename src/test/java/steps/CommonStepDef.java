@@ -9,10 +9,11 @@ import static org.hamcrest.core.StringEndsWith.endsWith;
 
 public class CommonStepDef {
 
- private HomePage homePage =new HomePage();
+ private  HomePage homePage =new HomePage();
     @Given("^Iam on a homepage$")
     public void iam_on_a_homepage()
     {
+
        String actualUrl= homePage.getCurrentUrl();
        assertThat(actualUrl,is(endsWith(".co.uk/")));
 

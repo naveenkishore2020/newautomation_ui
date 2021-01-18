@@ -7,6 +7,8 @@ import cucumber.api.java.en.When;
 import page_objects.HomePage;
 import page_objects.ResultsPage;
 
+import java.sql.DriverManager;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.endsWith;
 

@@ -15,11 +15,12 @@ import java.util.Random;
 
 public class Hooks {
 
-    private DriverManager driverManager=new DriverManager();
+    public DriverManager driverManager=new DriverManager();
 
   @Before
     public void setUp()
     {
+
         driverManager.openBrowser();
 
     }
