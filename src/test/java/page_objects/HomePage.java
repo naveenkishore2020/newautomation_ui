@@ -31,9 +31,4 @@ public class HomePage extends DriverManager{
 
     }
 
-    public String getHeader()
-    {
-        return driver.getTitle();
-    }
-
-}
+   }

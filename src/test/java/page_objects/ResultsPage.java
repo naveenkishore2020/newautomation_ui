@@ -24,9 +24,9 @@ public class ResultsPage extends DriverManager {
     public  String selectAnyProduct()
     {
         //List<WebElement> products= driver.findElements(By.cssSelector("a[data-test='component-product-card-title']"));
-        int numberOfProducts=products.size();
+        int numberOfProducts=productNames.size();
         int indexNumber= new RandomHelper().randomNumber(numberOfProducts);
-        WebElement selectedElement=products.get(indexNumber);
+        WebElement selectedElement=productNames.get(indexNumber);
         String expectedElement=  selectedElement.getText();
         selectedElement.click();
         sleep(5000);
@@ -66,7 +66,7 @@ public class ResultsPage extends DriverManager {
         //store every product rating in list
         //assert
         List <Double> ratingCollection =new ArrayList<>();//collect ratings
-        List<WebElement>  ratingLabels= driver.findElements(By.cssSelector("div[data-test='component-ratings']"));
+       // List<WebElement>  ratingLabels= driver.findElements(By.cssSelector("div[data-test='component-ratings']"));
         for (WebElement ratingLabel:ratingLabels)
         {
             String ratingValue=ratingLabel.getAttribute("data-star-rating");
